@@ -22,6 +22,7 @@ const {
 const { DialogBot } = require('./bots/dialogBot');
 const { RootDialog } = require('./dialogs/rootDialog');
 const { CosmosDbPartitionedStorage } = require('botbuilder-azure');
+const { DialogAndWelcomeBot } = require('./bots/dialogAndWelcomeBot');
 
 // database connections
 const myStorage = new CosmosDbPartitionedStorage({
@@ -66,7 +67,7 @@ const userState = new UserState(myStorage);
 const dialog = new RootDialog(userState);
 
 // Create the bot's main handler.
-const bot = new DialogBot(conversationState, userState, dialog);
+const bot = new DialogAndWelcomeBot(conversationState, userState, dialog);
 
 // Listen for incoming requests.
 server.post('/api/messages', async (req, res) => {

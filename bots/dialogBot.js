@@ -54,7 +54,7 @@ class DialogBot extends ActivityHandler {
         this.userState = userState;
         this.dialog = dialog;
         this.dialogState = this.conversationState.createProperty('DialogState');
-        this.userProfile= this.userState.createProperty()
+        this.userProfile= this.userState.createProperty('userProfile')
 
        // this.conversationData = this.conversationState.createProperty();
        // this.userProfile = this.userState.createProperty(USER_PROFILE_PROPERTY);
