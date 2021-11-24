@@ -76,7 +76,7 @@ class DialogBot extends ActivityHandler {
         await super.run(context);
 
         // Save any state changes. The load happened during the execution of the Dialog.
-        await this.conversationState.saveChanges(context, false);
+        await this.conversationState.saveChanges(context, true);
         await this.userState.saveChanges(context, false);
     }
     

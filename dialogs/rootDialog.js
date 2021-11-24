@@ -77,9 +77,9 @@ class RootDialog extends ComponentDialog {
         // and then collect and display the results.
         this.addDialog(new WaterfallDialog('root', [
             this.startDialog.bind(this),
-            this.addDialog(new TextPrompt(TEXT_PROMPT)),
-            this.nameStep.bind(this),
-           this.processResults.bind(this)
+          //  this.addDialog(new TextPrompt(TEXT_PROMPT)),
+          //  this.nameStep.bind(this),
+          this.processResults.bind(this)
         ]));
 
         this.initialDialogId = 'root';
@@ -132,8 +132,8 @@ class RootDialog extends ComponentDialog {
 
         // const address = values.address.values;
         // await step.context.sendActivity(`Your address is: ${ address.street }, ${ address.city } ${ address.zip }`);
-       await step.context.sendActivity(`Thank you for providing your Information.`);
-      // return await step.endDialog(step.result);
+      await step.context.sendActivity(`Thank you for providing your Information.`);
+      return await step.endDialog(step.result);
     }
     
 
